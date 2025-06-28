@@ -81,14 +81,14 @@ project-root/
 ### 1. Clone the Repository
 ```bash
 # Using Git (recommended)
-git clone <your-repo-url> Ztrios-ITSM-Chatbot
-cd Ztrios-ITSM-Chatbot
+git clone https://github.com/polok-dev98/KnowledgeBase_ITSM_Bot.git
+cd KnowledgeBase_ITSM_Bot
 # Or download and extract the ZIP, then cd into the folder
 ```
 
 ### 2. Create and Activate a Conda Environment
 ```bash
-# Create a new conda environment named 'ztriosbot' with Python 3.9
+# Create a new conda environment named 'venv' with Python 3.10
 conda create -p venv python=3.10 -y
 conda activate ./venv
 ```
@@ -140,7 +140,7 @@ Each knowledge item is used to build the vector database for retrieval and to pr
 
 ---
 
-
+---
 
 ## Project Building Steps and How It Works
 
@@ -167,6 +167,7 @@ python modules/index_builder.py
 ```
 This will regenerate the vector index and metadata files based on the latest CSV content.
 
+---
 
 ### How the Retriever Works (`modules/retriever.py`)
 
@@ -180,6 +181,7 @@ The retriever loads the FAISS vector index and metadata created during knowledge
 
 This ensures that only the most relevant knowledge base entries are used to answer each user query.
 
+---
 
 ### How the Chat Engine Works (`modules/chat_engine.py`)
 
@@ -211,6 +213,7 @@ The chat engine orchestrates the entire Retrieval-Augmented Generation (RAG) pro
 
 This process ensures that every answer is context-aware, leverages the knowledge base, and maintains a coherent conversation history for each session.
 
+---
 
 ### How Chat History Management Works (`modules/chat_history.py`)
 
@@ -238,6 +241,7 @@ This design ensures that chat history is persistent, organized by session, and s
 
 ---
 
+---
 ## Multi-User and Multi-Session Chat Support
 
 The prototype is designed to support multiple users, each of whom can have multiple independent chat sessions. Here’s how this is achieved:
@@ -269,6 +273,7 @@ This architecture enables robust, scalable support for multi-user, multi-session
 
 ---
 
+---
 ## Example User Inputs
 
 Here are some sample queries you can try with the chatbot:
@@ -292,7 +297,7 @@ These are example questions that, if present in the knowledge base, will be matc
 AI Engineer  
 Email: asifperveznstu.jsr369@gmail.com
 
----
+
 
 
 
