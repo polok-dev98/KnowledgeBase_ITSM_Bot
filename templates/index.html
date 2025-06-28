@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ztrious Bot</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <!-- Clock & Calendar -->
+  <div class="time-calendar-container">
+    <div class="clock" id="clock"></div>
+  </div>
+
+  <!-- Floating Chat Button -->
+  <div id="chat-button" class="chat-bubble">💬</div>
+
+  <!-- Chat Interface -->
+  <div id="chat-window" class="chat-window hidden">
+    <div id="chat-header">Ztrios ITSM Assistant</div>
+    <div id="chat-box" class="chat-box"></div>
+    <div class="input-area">
+      <input type="text" id="user-input" placeholder="Type your message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="/static/chatbot.js"></script>
+</body>
+</html>
