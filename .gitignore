@@ -17,6 +17,3 @@ venv/
 
 # MacOS
 .DS_Store
-
-# Chat history 
-chat_data.json
