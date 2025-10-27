@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-This project is an IT Service Management (ITSM) chatbot for Ztrios Technologies Ltd. It provides users with instant, context-aware support for common IT topics such as device setup, password resets, VPN configuration, backups, and troubleshooting. The chatbot uses a Retrieval-Augmented Generation (RAG) approach, combining a local knowledge base (vector database) with an LLM to answer user queries. It supports multiple users and multiple chat sessions, with all chat history stored per session.
+This project is an IT Service Management (ITSM) chatbot. It provides users with instant, context-aware support for common IT topics such as device setup, password resets, VPN configuration, backups, and troubleshooting. The chatbot uses a Retrieval-Augmented Generation (RAG) approach, combining a local knowledge base (vector database) with an LLM to answer user queries. It supports multiple users and multiple chat sessions, with all chat history stored per session.
 
 **Key Features:**
 - Multi-user, multi-session chat support
