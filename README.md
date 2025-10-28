@@ -34,7 +34,6 @@ This project is an IT Service Management (ITSM) chatbot. It provides users with 
 - **🎨 Professional Response Formatting**: Clean, structured answers with markdown support
 
 ### 🌐 **Modern Web Interface**
-- **📱 Responsive Design**: Works seamlessly on desktop
 - **🎨 Beautiful UI/UX**: Gradient backgrounds, animations, and modern styling
 - **🔒 Client-Side Storage**: Secure localStorage for user and session management
 
