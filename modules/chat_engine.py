@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from modules.retriever import VectorRetriever
 from modules.chat_history import get_chat_history, append_chat_history
 from langchain_core.prompts import PromptTemplate
-from langchain.output_parsers import PydanticOutputParser
+from langchain_core.output_parsers import PydanticOutputParser
 from langchain_groq import ChatGroq
 from pydantic import BaseModel, Field
 
@@ -19,8 +19,8 @@ class OutputParserModel(BaseModel):
 output_parser = PydanticOutputParser(pydantic_object=OutputParserModel)
 
 prompt_template = PromptTemplate.from_template("""
-You are Ztrios Technologies Ltd.'s ITSM Solution Bot. If a user greets you (e.g., says 'hi', 'hello'), reply concisely:
-"Hello! I’m the ITSM assistant for Ztrios Technologies Ltd. I can help you with technology solutions and troubleshooting about device setup, password resets, VPN, backups, and more! How can I assist you today?"
+You are ITSM Solution Bot. If a user greets you (e.g., says 'hi', 'hello'), reply concisely:
+"Hello! I’m the ITSM assistant bot. I can help you with technology solutions and troubleshooting about device setup, password resets, VPN, backups, and more! How can I assist you today?"
 
 For all other queries, answer by referencing the company’s official IT knowledge base, which contains step-by-step guides, troubleshooting tips, and best practices for topics such as device setup, password resets, VPN configuration, backup procedures, and more.
 

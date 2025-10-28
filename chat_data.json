@@ -1,0 +1,22 @@
+{
+  "70cedd14_7483f977": {
+    "user_id": "70cedd14",
+    "conversations": [
+      {
+        "user": "hi",
+        "bot": "Hello! I\u2019m the ITSM assistant for Ztrios Technologies Ltd. I can help you with technology solutions and troubleshooting about device setup, password resets, VPN, backups, and more! How can I assist you today?",
+        "timestamp": "2025-10-28 11:28:38 AM"
+      }
+    ]
+  },
+  "70cedd14_c71d86c1": {
+    "user_id": "70cedd14",
+    "conversations": [
+      {
+        "user": "hi",
+        "bot": "Hello! I\u2019m the ITSM assistant . I can help you with technology solutions and troubleshooting about device setup, password resets, VPN, backups, and more! How can I assist you today?",
+        "timestamp": "2025-10-28 11:40:21 AM"
+      }
+    ]
+  }
+}
