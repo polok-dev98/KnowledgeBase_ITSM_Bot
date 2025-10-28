@@ -1,6 +1,9 @@
-![Chatbot Background](static/bg.png)
+<img width="1925" height="995" alt="Screenshot from 2025-10-28 11-50-30" src="https://github.com/user-attachments/assets/f4d171d7-fade-460a-b0c4-51682a6fec87" />
 
-# Ztrios Technologies Ltd. ITSM Chatbot
+
+# ITSM Solution Chatbot
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://python.org)
 
 ## Project Overview
 
@@ -9,10 +12,9 @@ This project is an IT Service Management (ITSM) chatbot. It provides users with 
 **Key Features:**
 - Multi-user, multi-session chat support
 - Knowledge base search using FAISS vector database
-- LLM-powered answers, with fallback to model knowledge if needed
+- LLM-powered answers, with fallback to model knowledge
 - Web-based chat interface (Flask + JS)
 - Asynchronous, thread-safe chat history storage
-- Optional user profile support
 
 ---
 
@@ -36,7 +38,7 @@ project-root/
 ├── static/
 │   ├── chatbot.js          # Frontend chat logic (JS)
 │   ├── style.css           # Frontend styles
-│   └── z_w.png             # Logo or background image
+│   └── bg.png             # Logo or background image
 ├── templates/
 │   └── index.html          # Main HTML template for the chat UI
 ├── vector_store/
@@ -289,13 +291,43 @@ These are example questions that, if present in the knowledge base, will be matc
 
 **Note:** This is a demo project, so the knowledge base may not have enough data to answer every possible IT support question.
 
+
+## Input and Output Section
+
+### Input Examples
+1. Input: **How to reset a computer IP address?** </br> </br> 
+Output: </br>
+
+  <img width="1576" height="993" alt="Screenshot from 2025-10-28 12-00-29" src="https://github.com/user-attachments/assets/43566f90-8c03-4665-a60b-b908843b71d4" />
+
+  </br></br>
+ 
+2. Input: **How many movies has each customer rented?** </br> </br> 
+Output: </br>
+
+ <img width="734" height="913" alt="Screenshot from 2025-10-23 16-48-19" src="https://github.com/user-attachments/assets/b91fc315-c797-4936-ac59-21b083062b17" />
+ 
+</br></br>
+
+3. Input: **প্রতিটি রেটিং ক্যাটাগরিতে (G, PG, PG-13 ইত্যাদি) কতটি চলচ্চিত্র উপলব্ধ আছে?** </br> </br> 
+Output: </br>
+
+ <img width="734" height="913" alt="Screenshot from 2025-10-23 16-52-13" src="https://github.com/user-attachments/assets/1cc333ab-9038-4b71-8ae1-aa5812339f29" />
+
+</br></br>
+
+4. Input: **জেনার এবং তারিখ অনুসারে কতবার ভাড়া নেওয়া হয়েছে এবং মোট আয় কত?** </br> </br> 
+Output: </br>
+
+<img width="734" height="913" alt="Screenshot from 2025-10-23 17-02-28" src="https://github.com/user-attachments/assets/6ef728b3-678c-4705-bdb1-799d1f92d4f7" /> </br>
+
 ---
 
-## Author
-
+## Developed by
 **Asif Pervez Polok**  
-AI Engineer  
-Email: asifperveznstu.jsr369@gmail.com
+📧 **Email**: asifperveznstu.jsr369@gmail.com  
+🔗 **LinkedIn**: [polok98](https://www.linkedin.com/in/polok98/)  
+🐙 **GitHub**: [polok-dev98](https://github.com/polok-dev98)
 
 
 
