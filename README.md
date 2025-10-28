@@ -1,23 +1,51 @@
 <img width="1925" height="995" alt="Screenshot from 2025-10-28 11-50-30" src="https://github.com/user-attachments/assets/f4d171d7-fade-460a-b0c4-51682a6fec87" />
 
 
-# ITSM Solution Chatbot
+# ITSM Solution Chatbot 🤖
+
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://python.org)
+[![Flask](https://img.shields.io/badge/Flask-2.3%2B-lightgrey)](https://flask.palletsprojects.com/)
+[![FAISS](https://img.shields.io/badge/FAISS-Vector%20Search-orange)](https://faiss.ai/)
+[![RAG](https://img.shields.io/badge/Architecture-RAG-brightgreen)](https://arxiv.org/abs/2005.11401)
 
 ## Project Overview
 
 This project is an IT Service Management (ITSM) chatbot. It provides users with instant, context-aware support for common IT topics such as device setup, password resets, VPN configuration, backups, and troubleshooting. The chatbot uses a Retrieval-Augmented Generation (RAG) approach, combining a local knowledge base (vector database) with an LLM to answer user queries. It supports multiple users and multiple chat sessions, with all chat history stored per session.
 
-**Key Features:**
-- Multi-user, multi-session chat support
-- Knowledge base search using FAISS vector database
-- LLM-powered answers, with fallback to model knowledge
-- Web-based chat interface (Flask + JS)
-- Asynchronous, thread-safe chat history storage
+## ✨ Enhanced Features
+
+### 🤝 **Multi-User & Multi-Session Support**
+- **🔐 Secure Session Management**: Unique session IDs for each conversation
+- **👥 Concurrent User Support**: Handle multiple users simultaneously without data mixing
+- **💾 Persistent Chat History**: All conversations stored with timestamps
+- **🔄 Session Isolation**: Independent chat contexts for different user sessions
+
+### 🧠 **Intelligent Knowledge Retrieval**
+- **🔍 FAISS Vector Database**: Lightning-fast semantic search
+- **📚 Local Knowledge Base**: 160+ IT support articles and procedures
+- **🎯 Smart Context Matching**: Cosine similarity with configurable thresholds
+- **🔄 Dynamic Knowledge Updates**: Easy CSV-based knowledge base management
+
+### 🤖 **Advanced AI Capabilities**
+- **⚡ RAG Architecture**: Retrieval-Augmented Generation for accurate responses
+- **🎭 LLM Fallback System**: Graceful degradation when knowledge base lacks answers
+- **💬 Context-Aware Conversations**: Maintains conversation history and context
+- **🎨 Professional Response Formatting**: Clean, structured answers with markdown support
+
+### 🌐 **Modern Web Interface**
+- **📱 Responsive Design**: Works seamlessly on desktop and mobile devices
+- **🎨 Beautiful UI/UX**: Gradient backgrounds, animations, and modern styling
+- **⚡ Real-time Interactions**: Live clock, typing indicators, and smooth animations
+- **🔒 Client-Side Storage**: Secure localStorage for user and session management
+
+### 🔧 **Enterprise-Ready Architecture**
+- **🛡️ Thread-Safe Operations**: Async chat history management with locking
+- **📊 Structured Logging**: Comprehensive conversation tracking
+- **🔌 API-First Design**: RESTful endpoints for easy integration
+- **🐳 Container Ready**: Easy deployment and scaling
 
 ---
-
 
 ## Project Structure
 
@@ -62,7 +90,7 @@ project-root/
 - **static/**: Frontend assets (JS, CSS, images):
     - `chatbot.js`: Handles chat UI, user/session IDs, and API calls.
     - `style.css`: Styles for the chat interface.
-    - `z_w.png`: Logo or image asset.
+    - `bg.png`: Logo or image asset.
 - **templates/index.html**: Main chat UI template (Jinja2 for Flask).
 - **vector_store/**: Stores the FAISS vector index and its metadata:
     - `kb_index.faiss`: The binary FAISS index.
@@ -121,7 +149,17 @@ python modules/index_builder.py
 
 ---
 
-## Dataset Description
+## Dataset Description (Knowledge Base)
+
+Our system uses a comprehensive IT knowledge base with **160+ support articles** covering:
+
+| Category | Topics Covered |
+|----------|----------------|
+| **🖥️ Device Setup** | Mobile email, VPN, software installation |
+| **🔐 Security** | Password resets, PIN recovery, malware removal |
+| **🌐 Networking** | IP configuration, DNS, VPN setup |
+| **📱 Mobile Support** | Smartphone, tablet, smartwatch configuration |
+| **🛠️ Troubleshooting** | Common IT issues and solutions |
 
 The knowledge base is stored as a CSV file (`data/synthetic_knowledge_items.csv`). Each row represents a knowledge item with the following columns:
 
@@ -142,9 +180,40 @@ Each knowledge item is used to build the vector database for retrieval and to pr
 
 ---
 
----
 
 ## Project Building Steps and How It Works
+
+## 🔍 How It Works
+
+### 1. **Query Processing** 🎯
+```python
+User Query → Embedding Generation → Vector Search → Context Retrieval
+```
+
+### 2. **Intelligent Response Generation** 🤖
+```python
+Context + Chat History + Prompt Template → LLM → Formatted Response
+```
+
+### 3. **Session Management** 🔄
+```python
+User ID + Session ID → Thread-Safe Storage → Persistent History
+```
+
+### Technical Architecture:
+```
+Frontend (HTML/JS/CSS)
+        ↓
+    Flask API (Python)
+        ↓
+   Chat Engine (RAG)
+    ↙         ↘
+Retriever    LLM Integration
+   ↓             ↓
+FAISS DB      Groq API
+```
+
+
 
 ### Dataset Collection
 Here used the [Synthetic IT-Related Knowledge Items](https://www.kaggle.com/datasets/dkhundley/synthetic-it-related-knowledge-items) dataset from Kaggle, and additional data was generated using ChatGPT to enrich the knowledge base. The combined data is stored in `data/synthetic_knowledge_items.csv` with columns: `ki_topic`, `ki_text`, `alt_ki_text`, and `bad_ki_text`.
@@ -243,7 +312,6 @@ This design ensures that chat history is persistent, organized by session, and s
 
 ---
 
----
 ## Multi-User and Multi-Session Chat Support
 
 The prototype is designed to support multiple users, each of whom can have multiple independent chat sessions. Here’s how this is achieved:
@@ -275,7 +343,6 @@ This architecture enables robust, scalable support for multi-user, multi-session
 
 ---
 
----
 ## Example User Inputs
 
 Here are some sample queries you can try with the chatbot:
@@ -296,32 +363,71 @@ These are example questions that, if present in the knowledge base, will be matc
 
 ### Input Examples
 1. Input: **How to reset a computer IP address?** </br> </br> 
-Output: </br>
+ Output:
+ </br>
 
-  <img width="1576" height="993" alt="Screenshot from 2025-10-28 12-00-29" src="https://github.com/user-attachments/assets/43566f90-8c03-4665-a60b-b908843b71d4" />
+  <img width="1576" height="993" alt="Screenshot from 2025-10-28 12-00-29" src="https://github.com/user-attachments/assets/43566f90-8c03-4665-a60b-b908843b71d4" /> 
+  </br> 
+  </br>
+
+ Knowledge base:
+  </br>
+  </br>
+  <img width="1624" height="792" alt="Screenshot from 2025-10-28 12-05-34" src="https://github.com/user-attachments/assets/61bb6bd4-f792-404a-90b9-46e7dec47763" />
+
 
   </br></br>
+
  
-2. Input: **How many movies has each customer rented?** </br> </br> 
-Output: </br>
+2. Input: **Tell me how to reset a computer DNS cache?** </br> </br> 
+ Output:
+ </br>
 
- <img width="734" height="913" alt="Screenshot from 2025-10-23 16-48-19" src="https://github.com/user-attachments/assets/b91fc315-c797-4936-ac59-21b083062b17" />
- 
-</br></br>
+ <img width="1584" height="994" alt="Screenshot from 2025-10-28 12-14-32" src="https://github.com/user-attachments/assets/9374dea2-a1f7-47ad-b554-894b22e8d45e" />
 
-3. Input: **প্রতিটি রেটিং ক্যাটাগরিতে (G, PG, PG-13 ইত্যাদি) কতটি চলচ্চিত্র উপলব্ধ আছে?** </br> </br> 
-Output: </br>
+  </br>
+  </br>
+ Knowledge base:
+  </br>
+  </br>
+ <img width="1647" height="750" alt="Screenshot from 2025-10-28 12-15-59" src="https://github.com/user-attachments/assets/06b89e6f-95b4-4dd0-8816-397bd674118c" />
 
- <img width="734" height="913" alt="Screenshot from 2025-10-23 16-52-13" src="https://github.com/user-attachments/assets/1cc333ab-9038-4b71-8ae1-aa5812339f29" />
 
-</br></br>
+  </br></br>
+  
 
-4. Input: **জেনার এবং তারিখ অনুসারে কতবার ভাড়া নেওয়া হয়েছে এবং মোট আয় কত?** </br> </br> 
-Output: </br>
+3. Input: **I forget my VPN password, how to reset it?** </br> </br> 
+ Output:
+ </br>
 
-<img width="734" height="913" alt="Screenshot from 2025-10-23 17-02-28" src="https://github.com/user-attachments/assets/6ef728b3-678c-4705-bdb1-799d1f92d4f7" /> </br>
+ <img width="1602" height="987" alt="Screenshot from 2025-10-28 12-23-01" src="https://github.com/user-attachments/assets/10d9ad82-7677-40d0-bdc5-18758d311fb4" />
+
+ </br></br>
+  
+ Knowledge base:
+  </br>
+  </br>
+ <img width="1646" height="783" alt="Screenshot from 2025-10-28 12-22-20" src="https://github.com/user-attachments/assets/5cea027f-bab6-4513-8d96-ec250cb53a14" />
+
+
+  </br></br>
 
 ---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Developed by
 **Asif Pervez Polok**  
